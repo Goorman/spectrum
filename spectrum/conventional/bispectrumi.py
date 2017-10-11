@@ -65,7 +65,7 @@ def bispectrumi(y, nlag=None, nsamp=None, overlap=None,
   # cumulants in non-redundant region
   overlap  = np.fix(nsamp * overlap / 100)
   nadvance = nsamp - overlap
-  nrecord  = np.fix((ly*nrecs - overlap) / nadvance)
+  nrecord  = int(np.fix((ly*nrecs - overlap) / nadvance))
 
   c3 = np.zeros([nlag+1,nlag+1])
   ind = np.arange(nsamp)
